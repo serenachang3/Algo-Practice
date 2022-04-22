@@ -69,7 +69,7 @@ function tournamentWinner(competitions, results) {
 }
 
 function updateScores(team, points, scores){
-	if(!(team in scores)){
+	if(!(team in scores)){  // in operator returns true if the specified property is in the specified object or prototype
 		scores[team] = 0
 	}
 	scores[team] += points;
