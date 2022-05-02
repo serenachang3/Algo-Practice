@@ -1,3 +1,7 @@
+//for this version, you are returning the numbers NOT the index so it is OKAY to sort at the beginning
+
+//time complexity: O(nlog(n)) <<< because of sorting method | O(1) space
+
 function twoNumberSum(array, targetSum) {
     // Write your code here.
       array.sort((a, b) => a - b);
