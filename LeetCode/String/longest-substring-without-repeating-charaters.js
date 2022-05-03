@@ -2,7 +2,6 @@
 
 // /Given a string s, find the length of the longest substring without repeating characters.
 
-
 //Questions:
 //characters numbers, letters, symbols?
 //does this string have spaces? will they count?
@@ -14,34 +13,43 @@
 // break out of for loop when you hit a reoccuring character
 //return largest substring #
 
-var lengthOfLongestSubstring = function(s) {
-    
-    let hash = {};
-    let longestSubstring = 0;
-    
-    for(let i = 0; i < s.length; i++){
-        //this variable needs to be in the outter loop or it will reset each run in the inner loop
-        let currSubstringLength = 1;
-        
-        for(let j = i; j < s.length; j++){
-            
-            let currVal = s[j]
-            
-            if(currVal in hash){
-                hash = {};
-                
-                if (currSubstringLength > longestSubstring){
-                    longestSubstring = currSubstringLength -1;
-                }       
-            currSubstringLength = 0;
-            break;
 
-            } else {
-                // console.log("hash", hash)
-                hash[currVal] = 1;
-                currSubstringLength += 1
-            }
+//Soltuion 1
+//Time Complexity O(n^2) | Space Complexity O(n)
+
+var lengthOfLongestSubstring = function (s) {
+  let hash = {};
+  let longestSubstring = 0;
+
+  if (s.length === 1) {
+    return 1;
+  }  //this is not necessary but actually does help the run time &  memory
+
+  for (let i = 0; i < s.length; i++) {
+    //this variable needs to be in the outter loop or it will reset each run in the inner loop
+    let currSubstringLength = 0;
+
+    for (let j = i; j < s.length; j++) {
+      let currVal = s[j];
+
+      if (currVal == " ") {
+        currVal = "space"; //hash table does not "read" empty spaces, so I renamed
+      }
+      if (currVal in hash) {
+        hash = {};
+        if (currSubstringLength > longestSubstring) {
+          longestSubstring = currSubstringLength;
         }
+        currSubstringLength = 0;
+        break;  //make sure to break out of the loop or else it will keep going
+      } else {
+        hash[currVal] = 1;
+        currSubstringLength += 1;
+      }
     }
-    return longestSubstring;
+    if (currSubstringLength > longestSubstring) {
+      longestSubstring = currSubstringLength;
+    }
+  }
+  return longestSubstring;
 };
