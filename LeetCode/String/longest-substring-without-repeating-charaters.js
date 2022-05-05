@@ -78,6 +78,7 @@ var lengthOfLongestSubstring = function (s) {
 
 // Performance
 // The time complexity of this solution is linear, O(n), since we solved the problem by having to pass through the string only once.
+// O(m) space (m is the size of the charSet)
 
 
 var lengthOfLongestSubstring = function(s) {
@@ -96,3 +97,4 @@ var lengthOfLongestSubstring = function(s) {
     
     return maxLength
 };
+                                      
