@@ -53,3 +53,30 @@ var lengthOfLongestSubstring = function (s) {
   }
   return longestSubstring;
 };
+
+//Sliding Window Optomized Solution (left pointer moves to make window smaller as right pointer keeps moving as well)
+
+// The main method used for this problem is the sliding window technique. The sliding window is essentially 2 pointers 
+//that will help to keep track the start and end of a substring. In this solution, this window will always contain a 
+//substring with no duplicate characters.
+
+// Here are the brief steps of my solution:
+
+    // 1. We initialize the variables maxLength, which keeps track of the current longest length of any substring in 
+    // the string, and left, which is the start of the substring currently being tracked. A set is also initialised to 
+    // keep track of the elements in a substring. Since there are no duplicate characters in the substring (unique), a 
+    // set will be a perfect tool to keep track of duplicates.
+
+    // 2. We iterate through this loop using a right pointer. As this right pointer moves, we first check if the char 
+    // at the right pointer is a duplicate of any previous characters in the substring by cross checking with the set.
+
+    // 3. If the set already has the character, the set will continuously remove the leftmost char s[left] while also 
+    // shifting the left pointer to the right. This will shrink the window size until there are no more duplicates characters.
+
+    // 4. Once it is ensured that there are no duplicate characters, it will add the right most char s[right] to the 
+    // set and update maxLength if this new substring is longer than a previous substring.
+
+// Performance
+// The time complexity of this solution is linear, O(n), since we solved the problem by having to pass through the string only once.
+
+
