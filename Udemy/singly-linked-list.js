@@ -76,6 +76,18 @@ class SinglyLinkedList {
       return this;
       
     };
+
+    get(idx){   
+
+      if(idx < 0 || idx >= this.length) null;
+      
+      let value = this.head;
+      
+      for(let i = 0; i < idx; i++){
+        value = value.next
+      }
+      return value;
+    };
 }
 
 let list = new SinglyLinkedList()
