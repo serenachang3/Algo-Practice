@@ -122,7 +122,23 @@ class SinglyLinkedList {
       prevNode.next = removedNode.next;
       this.length--;
       return removedNode;
+
+    };
+
+    // 13 => 27 => 32 => 71
+    reverse(){
+      let node = this.head;
+      this.head = this.tail;
+      this.tail = node
+      let prev = null;
       
+      for(let i = 0; i < this.length; i++){
+        let next = node.next  //27
+        node.next = prev; //null
+        prev = node;
+        node = next;     
+      }
+      return this;
     };
 }
 
