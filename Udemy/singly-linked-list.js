@@ -80,13 +80,35 @@ class SinglyLinkedList {
     get(idx){   
 
       if(idx < 0 || idx >= this.length) null;
-      
+
       let value = this.head;
       
       for(let i = 0; i < idx; i++){
         value = value.next
       }
       return value;
+    };
+
+    insert(val, idx){
+      
+      if(idx < 0 || idx > this.length) {
+        return false;
+      } else if(idx === this.length) {
+        this.push(val);
+        return true;
+      } else if(idx === 0) {
+        this.unshift(val);
+        return true;
+      } else {
+        let prevNode = this.get(idx - 1);
+        let newNode = new Node(val);
+        let temp = prevNode.next
+                               
+        prevNode.next = newNode;
+        newNode.next = temp
+        this.length++;
+        return true;
+      }
     };
 }
 
