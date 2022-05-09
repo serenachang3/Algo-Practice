@@ -102,13 +102,27 @@ class SinglyLinkedList {
       } else {
         let prevNode = this.get(idx - 1);
         let newNode = new Node(val);
-        let temp = prevNode.next
+        let temp = prevNode.next //need to hold as a temp or else it will get lost when you reset on line 107
                                
         prevNode.next = newNode;
         newNode.next = temp
         this.length++;
         return true;
       }
+    };
+
+    remove(idx){
+      
+      if(idx < 0 || idx >= this.length) undefined;
+      if(idx === this.length-1) return this.pop();
+      if(idx === 0) return this.shift();
+      
+      let prevNode = this.get(idx-1);
+      let removedNode = prevNode.next
+      prevNode.next = removedNode.next;
+      this.length--;
+      return removedNode;
+      
     };
 }
 
