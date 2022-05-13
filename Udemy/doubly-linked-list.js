@@ -95,4 +95,12 @@ class DoublyLinkedList {
       return node;
     }
   }
+
+  set(val, idx) {
+    if (idx >= this.length || idx < 0) return false;
+    if (!this.head) return false;
+    let node = this.get(idx);
+    node.val = val;
+    return true;
+  }
 }
