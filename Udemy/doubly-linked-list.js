@@ -105,7 +105,7 @@ class DoublyLinkedList {
   };
 
   insert(val, idx){
-    if(idx < 0 || idx > this.length) return false;
+    if(idx < 0 || idx >= this.length) return false;
     if(idx === 0){
       this.unshift(val);
     } else if(idx === this.length-1){
@@ -121,5 +121,24 @@ class DoublyLinkedList {
     };
     return true;
   };
-  
+
+  remove(idx){
+    if(idx < 0 || idx >= this.length) return undefined;
+    if(idx === 0){
+      return this.shift();
+    } else if (idx === this.length-1){
+      return this.pop();
+    } else {
+      let prevNode = this.get(idx-1);
+      let nextNode = this.get(idx+1);
+      let node = this.get(idx);
+      prevNode.next = nextNode;
+      nextNode.prev = prevNode;
+      node.next = null;
+      node.prev = null;
+      this.length--;
+      return node;
+    }
+  };
+
 }
