@@ -44,5 +44,22 @@ class Node{
         this.length--;
         return oldTail;  
       };
-      
+
+      shift(){
+        if(!this.head) return undefined;
+        
+        let headNode = this.head
+        
+        if(this.length === 1){
+          this.head = null;
+          this.tail = null;
+        } else {
+          this.head = headNode.next;
+          this.head.prev = null;
+          headNode.next = null;
+        }
+        this.length--;
+        return headNode; 
+      };
+
   }
