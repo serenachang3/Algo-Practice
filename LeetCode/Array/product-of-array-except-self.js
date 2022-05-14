@@ -18,6 +18,7 @@
     // Output: [0,0,9,0,0]
 
 // Solution 1
+// O(n) time || O(1) space
 
 var productExceptSelf = function(nums) {
 	/*
