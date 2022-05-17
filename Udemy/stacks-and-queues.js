@@ -1,3 +1,5 @@
+//STACKS
+
 class Node {
     constructor(value){
       this.value = value;
@@ -44,3 +46,24 @@ class Node {
   stack.push("third");
   
   console.log("stack", stack)
+
+  stack.pop()
+  stack.pop()
+  stack.pop()
+
+
+  //QUEUES
+
+let q = [];
+
+q.unshift("FIRST")
+q.unshift("SECOND")
+q.unshift("THIRD")
+
+console.log(q)
+
+q.pop()
+q.pop()
+q.pop()
+
+console.log(q)
