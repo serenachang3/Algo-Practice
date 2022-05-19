@@ -42,9 +42,13 @@ class Node{
   }
   
   let tree  = new BinarySearchTree();
-  tree.root = new Node(10);
-  tree.root.right = new Node(15);
-  tree.root.left = new Node(7);
-  tree.root.left.right = new Node (9);
+  tree.insert(10);
+  tree.insert(5)
+  tree.insert(2)
+  tree.insert(13)
+  tree.insert(11)
+  tree.insert(16)
+  tree.insert(7)
+  tree.insert(10) //returns undefined
   
-  console.log(tree)
+  console.log(tree.insert(10))
