@@ -19,7 +19,5 @@ sumRange(3)
 function factorial(num){
     if(num === 1) return 1;
 
-    let answer;
-    answer = num * factorial(num-1)
-    return answer;
+    return num * factorial(num-1)
 }
