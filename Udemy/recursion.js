@@ -83,3 +83,27 @@ collectOddValues([1,2,3,4,5])
 // 1.concat([3,5])
 
 // return [1,3,5]
+
+
+
+
+//____________________________
+
+// Power Example
+
+// power(2,0) // 1
+// power(2,2) // 4
+// power(2,4) // 16
+
+function power(base, exponent){
+
+    if(exponent <= 0) return 1;
+    
+    return base * power(base, exponent-1)
+}
+
+        // 2 * power(2,1)
+            // 2 * 1
+        // 2 * 2
+
+        // return 4
