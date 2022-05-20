@@ -24,3 +24,26 @@ function removeElements(head, val) {
 	// return dummy.next as it holds value of head, we assigned earlier
     return dummy.next;
 }
+
+
+
+
+var removeElements = function(head, val) {
+    let curNode = head; // the node reading each node in lincked list
+    let prevHead = {next : head};  // it denote previous node of head
+    let prevNode = prevHead; // it denote previous node of current node(curNode)
+    
+    while(curNode !== null) {
+        if(curNode.val === val) {
+            prevNode.next = curNode.next;  // remove current node
+            curNode.next = null;
+                 
+            curNode = prevNode.next; // set new current node to prevNode.next because, current node is removed
+        }
+        else {
+            prevNode = curNode;
+            curNode = curNode.next;
+        }
+    }
+    return prevHead.next;
+};
