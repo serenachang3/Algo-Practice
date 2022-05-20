@@ -1,5 +1,7 @@
 //EASY
 
+//O(N) Time || O(1) Space
+
 function removeElements(head, val) {
     if(!head) return head;
     
@@ -30,7 +32,7 @@ function removeElements(head, val) {
 
 var removeElements = function(head, val) {
     let curNode = head; // the node reading each node in lincked list
-    let prevHead = {next : head};  // it denote previous node of head
+    let prevHead = {next : head};  // it denote previous node of head "sentinel node" (pseudo head)
     let prevNode = prevHead; // it denote previous node of current node(curNode)
     
     while(curNode !== null) {
