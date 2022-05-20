@@ -9,7 +9,7 @@ function removeElements(head, val) {
     let dummy = {next: head};
 	// curr variable pointing to head and prev variable to prevoiusly declared dummy variable
     let curr = head;
-    let prev = dummy;
+    let prev = dummy;  //this DOES NOT make a copy of line 9. It has the  same "address" and  therfore will change "dummy" as well
     
 	// will check till curr is not null
     while(curr) {
