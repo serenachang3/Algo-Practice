@@ -134,3 +134,10 @@ function recursiveRange(num){
   
   return num + recursiveRange(num-1)
 }
+
+//fibonacci
+
+function fib(n){
+  if (n <= 2) return 1;
+  return fib(n-1) + fib(n-2);
+}
